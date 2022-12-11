@@ -14,16 +14,17 @@ code {
 }
 @media screen and (min-width:700px) {
   .main-box{
-    margin-left:200px !important;
+    margin-left:7vw !important;
   }
   .main-bg{
-    background-image: url("./assets/bg.png");
+    background-image: url("./assets/bg2.png");
     background-repeat: no-repeat;
     background-position: right;
     width:100vw;
     height:100vh;
   background-color: #DEF5E5;
-
+  background-attachment: fixed;
+  background-size: contain;
   }
 }
 .pl-5{

@@ -18,9 +18,6 @@ export default function Review() {
             Thank you for selecting us. 
             We'll not dissapoint you.
           </Typography>
-          <Typography gutterBottom>John Smith</Typography>
-          <Typography gutterBottom>Batch</Typography>
-          <Typography gutterBottom>Amount</Typography>
         </Grid>
 
       </Grid>

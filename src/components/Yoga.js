@@ -73,7 +73,11 @@ function getStepContent(step) {
   }
 
   const handleNext = () => {
-      if(activeStep === 0){
+    console.log(userData)
+      if(userData.age < 18 || userData.age>65 || userData.age == NaN)
+         {alert("Age should be between 18 and 65")}
+     
+      if(activeStep === 0 && (userData.age >= 18 || userData.age<=65) && (userData.name) && userData.email && userData.batch){
           console.log("REGISTER API CALLED")
           setloading(true);
           console.log("USER DATA SENT",userData)
@@ -88,7 +92,7 @@ function getStepContent(step) {
               setloading(false);
           })
         }
-        else if(activeStep === 1){
+      else if(activeStep === 1){
             console.log("PAYMENT API CALLED")
                 setloading(true);
                 console.log("USER DATA SENT",userData)
@@ -107,6 +111,9 @@ function getStepContent(step) {
                     setloading(false);
                 })
         }
+      else if((!userData.age) && (!userData.name) && !userData.email && !userData.batch){
+        alert("Input field marked with * are complusory")
+      }
   };
 
   const handleBack = () => {
@@ -170,7 +177,7 @@ function getStepContent(step) {
                   onClick={handleNext}
                   sx={{ mt: 3, ml: 1 }}
                 >
-                  {activeStep === steps.length - 1 ? 'CONFIRM YOUR ADMISSION' : activeStep === steps.length - 2?"PAY ADMISSION FEES":"Next"}
+                  {activeStep === steps.length - 1 ? 'THANK YOU' : activeStep === steps.length - 2?"PAY ADMISSION FEES":"Next"}
                 </Button>}
                 {loading && <Button sx={{ mt: 3, ml: 1, backgroundColor:"#aaa", color:'#fff' }}>Loading...</Button>}
               </Box>
